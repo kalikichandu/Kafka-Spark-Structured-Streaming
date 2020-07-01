@@ -10,12 +10,12 @@ directory = os.getcwd()
 
 # print(data.head())
 
-producer = KafkaProducer(bootstrap_servers = ['10.0.1.4:9092'],
+producer = KafkaProducer(bootstrap_servers = ['10.0.1.4:9094'],
                         value_serializer = lambda x:dumps(x).encode('utf-8'))
 
 for e in range(1000):
     data = {'number':e}
-    producer.send('numtest',value=data)
+    producer.send('multibroker',value=data)
     sleep(60)
 
 # for values in range(5,data.shape[0],5):
