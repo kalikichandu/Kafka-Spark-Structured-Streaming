@@ -16,7 +16,7 @@ producer = KafkaProducer(bootstrap_servers = ['10.0.1.4:9094'],
 for e in range(1000):
     data = {'number':e}
     producer.send('multibroker',value=data)
-    sleep(60)
+    sleep(10)
 
 # for values in range(5,data.shape[0],5):
 #     print(data.iloc[values-5:values,:])
