@@ -10,7 +10,7 @@ directory = os.getcwd()
 
 # print(data.head())
 
-producer = KafkaProducer(bootstrap_servers = ['localhost:9092'],
+producer = KafkaProducer(bootstrap_servers = ['10.0.1.4:9092'],
                         value_serializer = lambda x:dumps(x).encode('utf-8'))
 
 for e in range(1000):
